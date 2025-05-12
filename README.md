@@ -15,12 +15,16 @@ View profiles, like photos, edit your own profile by adding new photos and descr
 
 ### Images
 
-Mobile design using responsive elements.
+Mobile design using responsive elements:
 
 ![Mobile design](./images/Mobile.design.png)
 
-Interactive designs using hover states.
+Interactive designs using hover states:
 ![Interactive](./images/Interactive.hover.png)
+
+Desktop version:
+
+![Desktop version](./images/Desktop.version.png)
 
 Add a profile picture:
 
