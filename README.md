@@ -20,6 +20,7 @@ Mobile design using responsive elements:
 ![Mobile design](./images/Mobile.design.png)
 
 Interactive designs using hover states:
+
 ![Interactive](./images/Interactive.hover.png)
 
 Desktop version:
@@ -30,9 +31,9 @@ Add desciptions to your profile without effecting the integrity of the layout:
 
 ![Add desciptions](./images/Add.descriptions.png)
 
-Add a profile picture:
+ The use of **forms** in this design is for users to submit information to be able to edit their profiles: 
 
-![Add a profile picture](images/avatar.jpg)
+![Add a profile picture](./images/edit-profile.png)
 
 Add pictures and desciptions to your profile: 
 
