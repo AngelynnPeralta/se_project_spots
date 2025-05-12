@@ -26,13 +26,17 @@ Desktop version:
 
 ![Desktop version](./images/Desktop.version.png)
 
+Add desciptions to your profile without effecting the integrity of the layout:
+
+![Add desciptions](./images/Add.descriptions.png)
+
 Add a profile picture:
 
 ![Add a profile picture](images/avatar.jpg)
 
-Add pictures to your profile: 
+Add pictures and desciptions to your profile: 
 
-![Add photos to your profile](./images/5-photo-by-van-anh-nguyen-from-pexels.jpg)
+![Add photos to your profile](./images/add.pictures.png)
 
 
 ### Deployment 
