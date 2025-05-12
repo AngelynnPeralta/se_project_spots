@@ -1,21 +1,33 @@
 # Project 3: Spots
 
-### Overview  
+### Description
 
-* Intro  
-* Figma  
-* Images  
+Spots! A social media platform where you can interact and connect with yourself and other people by creating a profile that represents your creativity and free expression. 
+
+View profiles, like photos, edit your own profile by adding new photos and descriptions. This social media website is responsive through desktops, tablets and mobile devices. 
   
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+### Technologies 
+
+- Html
+- Css
+- Responsive and interactive design 
+- Grid and Flex displays 
+
+### Images
+
+Add a profile picture:
+
+![Add a profile picture](images/avatar.jpg)
+
+Add pictures to your profile: 
+![Like photos](./images/heart.svg)
+
+![Add photos to your profile](./images/5-photo-by-van-anh-nguyen-from-pexels.jpg)
+
+![More photos](./images/6-photo-by-moritz-feldmann-from-pexels.jpg)
+
+### Deployment 
+
+This webpage is deployed to GitHub Pages
+
+- Deployment link: 
