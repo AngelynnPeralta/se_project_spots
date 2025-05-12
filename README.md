@@ -44,4 +44,4 @@ Add pictures and desciptions to your profile:
 
 This webpage is deployed to GitHub Pages
 
-- Deployment link: 
+- Deployment link: https://angelynnperalta.github.io/se_project_spots/
