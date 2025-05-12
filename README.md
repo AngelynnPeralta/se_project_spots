@@ -15,16 +15,21 @@ View profiles, like photos, edit your own profile by adding new photos and descr
 
 ### Images
 
+Mobile design using responsive elements.
+
+![Mobile design](./images/Mobile.design.png)
+
+Interactive designs using hover states.
+![Interactive](./images/Interactive.hover.png)
+
 Add a profile picture:
 
 ![Add a profile picture](images/avatar.jpg)
 
 Add pictures to your profile: 
-![Like photos](./images/heart.svg)
 
 ![Add photos to your profile](./images/5-photo-by-van-anh-nguyen-from-pexels.jpg)
 
-![More photos](./images/6-photo-by-moritz-feldmann-from-pexels.jpg)
 
 ### Deployment 
 
