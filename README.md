@@ -45,3 +45,8 @@ Add pictures and desciptions to your profile:
 This webpage is deployed to GitHub Pages
 
 - Deployment link: https://angelynnperalta.github.io/se_project_spots/
+
+### Video Overview 
+
+link: https://drive.google.com/file/d/153TdDaKVgcNPO1WnWMW4dbpfg4vI_QBy/view?usp=drive_link
+
