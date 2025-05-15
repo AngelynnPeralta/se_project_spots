@@ -35,7 +35,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 100%;
+  max-width: 90%;
 }
 
 @media screen and (max-width: 627px) {
@@ -46,5 +46,6 @@
   .card__title {
     font-size: 16px;
     line-height: 1;
+    max-width: 90%;
   }
 }

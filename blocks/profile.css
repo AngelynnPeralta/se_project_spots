@@ -55,6 +55,7 @@
   font-size: 16px;
   line-height: 1;
   color: #212121;
+  cursor: pointer;
 }
 
 .profile__edit-button:hover {
@@ -81,6 +82,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  cursor: pointer;
 }
 
 .profile__plus-button-image {
