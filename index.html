@@ -25,7 +25,11 @@
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
-            <button type="button" class="profile__edit-button">
+            <button
+              type="button"
+              class="profile__edit-button"
+              aria-label="profile-edit-button"
+            >
               <img
                 src="./images/pencil.svg"
                 alt="pencil"
@@ -34,7 +38,11 @@
               Edit Profile
             </button>
           </div>
-          <button type="button" class="profile__plus-button">
+          <button
+            type="button"
+            class="profile__plus-button"
+            aria-label="profile-add-image-button"
+          >
             <img
               src="./images/plus.svg"
               alt="plus"
@@ -53,7 +61,11 @@
               />
               <div class="card__content">
                 <h2 class="card__title">Val Thorens</h2>
-                <button type="button" class="card__like-button"></button>
+                <button
+                  type="button"
+                  class="card__like-button"
+                  aria-label="like-button"
+                ></button>
               </div>
             </li>
             <li class="card">
@@ -64,7 +76,11 @@
               />
               <div class="card__content">
                 <h2 class="card__title">Restaurant terrace</h2>
-                <button type="button" class="card__like-button"></button>
+                <button
+                  type="button"
+                  class="card__like-button"
+                  aria-label="like-button"
+                ></button>
               </div>
             </li>
             <li class="card">
@@ -75,7 +91,11 @@
               />
               <div class="card__content">
                 <h2 class="card__title">An outdoor cafe</h2>
-                <button type="button" class="card__like-button"></button>
+                <button
+                  type="button"
+                  class="card__like-button"
+                  aria-label="like-button"
+                ></button>
               </div>
             </li>
             <li class="card">
@@ -86,7 +106,11 @@
               />
               <div class="card__content">
                 <h2 class="card__title">A very long bridge over the forest</h2>
-                <button type="button" class="card__like-button"></button>
+                <button
+                  type="button"
+                  class="card__like-button"
+                  aria-label="like-button"
+                ></button>
               </div>
             </li>
             <li class="card">
@@ -97,7 +121,11 @@
               />
               <div class="card__content">
                 <h2 class="card__title">Tunnel with morning light</h2>
-                <button type="button" class="card__like-button"></button>
+                <button
+                  type="button"
+                  class="card__like-button"
+                  aria-label="like-button"
+                ></button>
               </div>
             </li>
             <li class="card">
@@ -108,7 +136,11 @@
               />
               <div class="card__content">
                 <h2 class="card__title">Mountain house</h2>
-                <button type="button" class="card__like-button"></button>
+                <button
+                  type="button"
+                  class="card__like-button"
+                  aria-label="like-button"
+                ></button>
               </div>
             </li>
           </ul>
@@ -119,8 +151,11 @@
       </footer>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn">
-          </button>
+          <button
+            type="button"
+            class="modal__close-btn"
+            aria-label="close-button"
+          ></button>
           <h2 class="modal__title">Edit profile</h2>
           <form class="modal__form" id="edit-profile-form">
             <label for="profile-name-input" class="modal__label"
@@ -143,14 +178,23 @@
                 required
               />
             </label>
-            <button type="submit" class="modal__save-btn">Save</button>
+            <button
+              type="submit"
+              class="modal__save-btn"
+              aria-label="save-button"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn">
-          </button>
+          <button
+            type="button"
+            class="modal__close-btn"
+            aria-label="close-button"
+          ></button>
           <h2 class="modal__title">New post</h2>
           <form class="modal__form" id="new-post-form">
             <label for="card-image-input" class="modal__label"
@@ -173,7 +217,13 @@
                 required
               />
             </label>
-            <button type="submit" class="modal__save-btn">Save</button>
+            <button
+              type="submit"
+              class="modal__save-btn"
+              aria-label="save-button"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
