@@ -25,8 +25,6 @@ const initialCards = [
   },
 ];
 
-
-
 const editProfileBtn = document.querySelector(".profile__edit-button");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
@@ -97,8 +95,7 @@ function handleNewPostSubmit(evt) {
 
 newPostFormElement.addEventListener("submit", handleNewPostSubmit);
 
-
-initialCards.forEach(function(cat) {
+initialCards.forEach(function (cat) {
   console.log(cat.name + "!");
   console.log(cat.link);
-  });
+});
