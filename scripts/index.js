@@ -1,3 +1,32 @@
+const initialCards = [
+  {
+    name: "City Cat",
+    link: "https://unsplash.com/photos/white-and-orange-tabby-cat-WhHc2Z9XV9k",
+  },
+  {
+    name: "Computer Cat",
+    link: "https://unsplash.com/photos/silver-imac-with-keyboard-and-mouse-n2M2SBQE6Iw",
+  },
+  {
+    name: "Tired Cat",
+    link: "https://unsplash.com/photos/long-fur-white-and-black-cat-HlI03bNHhBI",
+  },
+  {
+    name: "Cool Cat",
+    link: "https://unsplash.com/photos/russian-blue-cat-wearing-yellow-sunglasses-yMSecCHsIBc",
+  },
+  {
+    name: "Christmas Cat",
+    link: "https://unsplash.com/photos/black-and-white-cat-lyes-beside-lighted-string-light-PUTVh0Z_qNQ",
+  },
+  {
+    name: "Happy Cat",
+    link: "https://unsplash.com/photos/white-kitten-Tn8DLxwuDMA",
+  },
+];
+
+
+
 const editProfileBtn = document.querySelector(".profile__edit-button");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
@@ -39,15 +68,15 @@ editProfileBtn.addEventListener("click", function () {
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
- closeModal(editProfileModal);
+  closeModal(editProfileModal);
 });
 
 newPostBtn.addEventListener("click", function () {
-openModal(newPostModal);
+  openModal(newPostModal);
 });
 
 newPostCloseBtn.addEventListener("click", function () {
- closeModal(newPostModal);
+  closeModal(newPostModal);
 });
 
 function handleProfileFormSubmit(evt) {
@@ -67,3 +96,9 @@ function handleNewPostSubmit(evt) {
 }
 
 newPostFormElement.addEventListener("submit", handleNewPostSubmit);
+
+
+initialCards.forEach(function(cat) {
+  console.log(cat.name + "!");
+  console.log(cat.link);
+  });
