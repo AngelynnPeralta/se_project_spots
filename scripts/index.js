@@ -1,27 +1,31 @@
 const initialCards = [
   {
-    name: "City Cat",
-    link: "https://unsplash.com/photos/white-and-orange-tabby-cat-WhHc2Z9XV9k",
+    name: "Golden gate bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
   },
   {
-    name: "Computer Cat",
-    link: "https://unsplash.com/photos/silver-imac-with-keyboard-and-mouse-n2M2SBQE6Iw",
+    name: "Val Thorens",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
   {
-    name: "Tired Cat",
-    link: "https://unsplash.com/photos/long-fur-white-and-black-cat-HlI03bNHhBI",
+    name: "Restaurant terrace",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
   },
   {
-    name: "Cool Cat",
-    link: "https://unsplash.com/photos/russian-blue-cat-wearing-yellow-sunglasses-yMSecCHsIBc",
+    name: "An outdoor cafe",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
   },
   {
-    name: "Christmas Cat",
-    link: "https://unsplash.com/photos/black-and-white-cat-lyes-beside-lighted-string-light-PUTVh0Z_qNQ",
+    name: "A very long bridge, over the forest and through the trees",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
   },
   {
-    name: "Happy Cat",
-    link: "https://unsplash.com/photos/white-kitten-Tn8DLxwuDMA",
+    name: "Tunnel with morning light",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
+  },
+  {
+    name: "Mountain house",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
 
@@ -50,6 +54,55 @@ const profileNameElement = document.querySelector(".profile__name");
 const profileDescriptionElement = document.querySelector(
   ".profile__description"
 );
+
+const cardTemplate = document
+  .querySelector("#card-template")
+  .content.querySelector(".card");
+const cardsList = document.querySelector(".cards__list");
+
+const modalPreview = document.querySelector("#modal-preview");
+const modalPreviewCloseBtn = modalPreview.querySelector(
+  ".modal__close-btn_type_preview"
+);
+const modalPreviewImage = modalPreview.querySelector(".modal__image");
+const modalPreviewCaption = modalPreview.querySelector(".modal__caption");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+
+  const cardTitle = cardElement.querySelector(".card__title");
+  const cardImage = cardElement.querySelector(".card__image");
+
+  cardImage.src = data.link;
+  cardImage.alt = data.name;
+
+  cardTitle.textContent = data.name;
+
+  const cardLikeBtn = cardElement.querySelector(".card__like-button");
+
+  cardLikeBtn.addEventListener("click", () => {
+    cardLikeBtn.classList.toggle("card__like-button_active");
+  });
+
+  const cardDeleteBtn = cardElement.querySelector(".card__delete-button");
+  cardDeleteBtn.addEventListener("click", () => {
+    cardElement.remove();
+    cardElement = null;
+  });
+
+  cardImage.addEventListener("click", () => {
+    modalPreviewImage.src = data.link;
+    modalPreviewImage.alt = data.name;
+    modalPreviewCaption.textContent = data.name;
+    openModal(modalPreview);
+  });
+
+  modalPreviewCloseBtn.addEventListener("click", () => {
+    closeModal(modalPreview);
+  });
+
+  return cardElement;
+}
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
@@ -88,14 +141,21 @@ editProfileFormElement.addEventListener("submit", handleProfileFormSubmit);
 
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
-  console.log(newPostCaptionInput.value);
-  console.log(newPostImageLinkInput.value);
+
+  const inputValues = {
+    name: newPostCaptionInput.value,
+    link: newPostImageLinkInput.value,
+  };
+
+  const cardElement = getCardElement(inputValues);
+  cardsList.prepend(cardElement);
+
   closeModal(newPostModal);
 }
 
 newPostFormElement.addEventListener("submit", handleNewPostSubmit);
 
-initialCards.forEach(function (cat) {
-  console.log(cat.name + "!");
-  console.log(cat.link);
+initialCards.forEach(function (item) {
+  const cardElement = getCardElement(item);
+  cardsList.append(cardElement);
 });
