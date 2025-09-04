@@ -43,6 +43,7 @@ const editProfileFormElement =
 
 const newPostBtn = document.querySelector(".profile__plus-button");
 const newPostModal = document.querySelector("#new-post-modal");
+const saveButton = document.querySelector(".modal__save-btn");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const newPostFormElement = newPostModal.querySelector("#new-post-form");
 const newPostCaptionInput = newPostModal.querySelector(
@@ -151,6 +152,7 @@ function handleNewPostSubmit(evt) {
 
   newPostCaptionInput.value = "";
   newPostImageLinkInput.value = "";
+  disableButton(saveButton, settings);
 
   closeModal(newPostModal);
 }
@@ -161,3 +163,28 @@ initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
 });
+
+const escapeKeyHandler = (modal) => {
+  document.addEventListener("keydown", (evt) => {
+    if (evt.key === "Escape" && modal.classList.contains("modal_is-opened")) {
+      closeModal(modal);
+    } else {
+    }
+  });
+};
+escapeKeyHandler(editProfileModal);
+escapeKeyHandler(newPostModal);
+escapeKeyHandler(modalPreview);
+
+const clickOutHandler = (modal) => {
+  document.addEventListener("click", (evt) => {
+    if (evt.target === modal && modal.classList.contains("modal_is-opened")) {
+      closeModal(modal);
+    } else {
+    }
+  });
+};
+
+clickOutHandler(editProfileModal);
+clickOutHandler(newPostModal);
+clickOutHandler(modalPreview);

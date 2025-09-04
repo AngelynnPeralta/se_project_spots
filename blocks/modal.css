@@ -140,7 +140,7 @@
 
 .modal__error {
   display: block;
-  color: #FF0000B2;
+  color: #ff0000b2;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -149,7 +149,7 @@
 }
 
 .modal__input_type_error {
-border: 1px solid #FF000099;
+  border: 1px solid #ff000099;
 }
 
 .modal__save-btn {
@@ -169,6 +169,10 @@ border: 1px solid #FF000099;
 .modal__save-btn:hover {
   cursor: pointer;
   opacity: 80%;
+}
+
+.modal__save-btn_disabled {
+  opacity: 50%;
 }
 
 .modal__input::placeholder {
