@@ -10,13 +10,13 @@ const settings = {
 const showInputError = (formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   errorElement.textContent = errorMessage;
-  inputElement.classList.add(".modal__input_type_error");
+  inputElement.classList.add(config.inputErrorClass);
 };
 
 const hideInputError = (formElement, inputElement) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   errorElement.textContent = "";
-  inputElement.classList.remove(".modal__input_type_error");
+  inputElement.classList.remove(config.inputErrorClass);
 };
 
 const toggleButtonState = (inputList, buttonElement) => {
@@ -52,7 +52,7 @@ const setEventListeners = (formElement, config) => {
     formElement.querySelectorAll(config.inputSelector)
   );
   const buttonElement = Array.from(
-    formElement.querySelector(config.submitButtonSelector)
+    formElement.querySelectorAll(config.submitButtonSelector)
   );
 
   inputList.forEach((inputElement) => {
@@ -63,11 +63,11 @@ const setEventListeners = (formElement, config) => {
   });
 };
 
-const enablevalidation = (config) => {
+const enableValidation = (config) => {
   const formList = Array.from(document.querySelectorAll(config.formSelector));
   formList.forEach((formElement) => {
     setEventListeners(formElement, config);
   });
 };
 
-enablevalidation(settings);
+enableValidation(settings);

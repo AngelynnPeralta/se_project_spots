@@ -43,7 +43,7 @@ const editProfileFormElement =
 
 const newPostBtn = document.querySelector(".profile__plus-button");
 const newPostModal = document.querySelector("#new-post-modal");
-const saveButton = document.querySelector(".modal__save-btn");
+const saveButton = document.querySelectorAll(".modal__save-btn");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const newPostFormElement = newPostModal.querySelector("#new-post-form");
 const newPostCaptionInput = newPostModal.querySelector(
@@ -142,6 +142,9 @@ editProfileFormElement.addEventListener("submit", handleProfileFormSubmit);
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
 
+  if (!newPostFormElement.checkValidity()) {
+    return;
+  }
   const inputValues = {
     name: newPostCaptionInput.value,
     link: newPostImageLinkInput.value,
@@ -164,27 +167,49 @@ initialCards.forEach(function (item) {
   cardsList.append(cardElement);
 });
 
-const escapeKeyHandler = (modal) => {
-  document.addEventListener("keydown", (evt) => {
-    if (evt.key === "Escape" && modal.classList.contains("modal_is-opened")) {
-      closeModal(modal);
-    } else {
+function handleEscapeKey(evt) {
+  if (evt.key === "Escape") {
+    const openModal = document.querySelector(".modal_is-opened");
+    if (openModal) {
+      closeModal(openModal);
     }
-  });
-};
-escapeKeyHandler(editProfileModal);
-escapeKeyHandler(newPostModal);
-escapeKeyHandler(modalPreview);
+  }
+}
 
-const clickOutHandler = (modal) => {
-  document.addEventListener("click", (evt) => {
-    if (evt.target === modal && modal.classList.contains("modal_is-opened")) {
-      closeModal(modal);
-    } else {
-    }
-  });
-};
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
 
-clickOutHandler(editProfileModal);
-clickOutHandler(newPostModal);
-clickOutHandler(modalPreview);
+  document.addEventListener("keydown", handleEscapeKey);
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+
+  document.removeEventListener("keydown", handleEscapeKey);
+}
+handleEscapeKey(editProfileModal);
+handleEscapeKey(newPostModal);
+handleEscapeKey(modalPreview);
+
+function handleClickOutside(evt) {
+  const openModal = document.querySelector(".modal_is-opened");
+  if (openModal && evt.target === openModal) {
+    closeModal(openModal);
+  }
+}
+
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+
+  document.addEventListener("click", handleClickOutside);
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+
+  document.removeEventListener("click", handleClickOutside);
+}
+
+handleClickOutside(editProfileModal);
+handleClickOutside(newPostModal);
+handleClickOutside(modalPreview);
