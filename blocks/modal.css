@@ -166,14 +166,16 @@
   border: none;
 }
 
+.modal__save-btn_disabled {
+  opacity: 50%;
+}
+
 .modal__save-btn:hover {
   cursor: pointer;
   opacity: 80%;
 }
 
-.modal__save-btn_disabled {
-  opacity: 50%;
-}
+
 
 .modal__input::placeholder {
   color: #2121214d;

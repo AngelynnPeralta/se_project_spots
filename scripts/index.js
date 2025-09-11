@@ -104,14 +104,6 @@ function getCardElement(data) {
   return cardElement;
 }
 
-function openModal(modal) {
-  modal.classList.add("modal_is-opened");
-}
-
-function closeModal(modal) {
-  modal.classList.remove("modal_is-opened");
-}
-
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameElement.textContent;
   editProfileDescriptionInput.value = profileDescriptionElement.textContent;
@@ -186,30 +178,18 @@ function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 
   document.removeEventListener("keydown", handleEscapeKey);
-}
-handleEscapeKey(editProfileModal);
-handleEscapeKey(newPostModal);
-handleEscapeKey(modalPreview);
+};
 
-function handleClickOutside(evt) {
-  const openModal = document.querySelector(".modal_is-opened");
-  if (openModal && evt.target === openModal) {
-    closeModal(openModal);
-  }
-}
 
-function openModal(modal) {
-  modal.classList.add("modal_is-opened");
+const modals = document.querySelectorAll(".modal");
 
-  document.addEventListener("click", handleClickOutside);
-}
 
-function closeModal(modal) {
-  modal.classList.remove("modal_is-opened");
+modals.forEach((modal ) => {
+modal.addEventListener("click", (evt) => {
+if (evt.target === modal) {
+  closeModal(modal);
+} 
+})
+});
 
-  document.removeEventListener("click", handleClickOutside);
-}
 
-handleClickOutside(editProfileModal);
-handleClickOutside(newPostModal);
-handleClickOutside(modalPreview);
