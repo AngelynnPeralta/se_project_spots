@@ -43,7 +43,7 @@ const editProfileFormElement =
 
 const newPostBtn = document.querySelector(".profile__plus-button");
 const newPostModal = document.querySelector("#new-post-modal");
-const saveButton = document.querySelectorAll(".modal__save-btn");
+const cardSubmitButton = newPostModal.querySelector(".modal__save-btn");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const newPostFormElement = newPostModal.querySelector("#new-post-form");
 const newPostCaptionInput = newPostModal.querySelector(
@@ -97,10 +97,6 @@ function getCardElement(data) {
     openModal(modalPreview);
   });
 
-  modalPreviewCloseBtn.addEventListener("click", () => {
-    closeModal(modalPreview);
-  });
-
   return cardElement;
 }
 
@@ -114,8 +110,19 @@ editProfileCloseBtn.addEventListener("click", function () {
   closeModal(editProfileModal);
 });
 
+const closeButtons = document.querySelectorAll(".modal__close-btn");
+
+closeButtons.forEach((button) => {
+  const popup = button.closest(".modal");
+  button.addEventListener("click", () => closeModal(popup));
+});
+
 newPostBtn.addEventListener("click", function () {
   openModal(newPostModal);
+});
+
+modalPreviewCloseBtn.addEventListener("click", () => {
+  closeModal(modalPreview);
 });
 
 newPostCloseBtn.addEventListener("click", function () {
@@ -134,9 +141,6 @@ editProfileFormElement.addEventListener("submit", handleProfileFormSubmit);
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
 
-  if (!newPostFormElement.checkValidity()) {
-    return;
-  }
   const inputValues = {
     name: newPostCaptionInput.value,
     link: newPostImageLinkInput.value,
@@ -145,9 +149,9 @@ function handleNewPostSubmit(evt) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
 
-  newPostCaptionInput.value = "";
-  newPostImageLinkInput.value = "";
-  disableButton(saveButton, settings);
+  evt.target.reset();
+
+  disableButton(cardSubmitButton, settings);
 
   closeModal(newPostModal);
 }
@@ -178,18 +182,14 @@ function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 
   document.removeEventListener("keydown", handleEscapeKey);
-};
-
+}
 
 const modals = document.querySelectorAll(".modal");
 
-
-modals.forEach((modal ) => {
-modal.addEventListener("click", (evt) => {
-if (evt.target === modal) {
-  closeModal(modal);
-} 
-})
+modals.forEach((modal) => {
+  modal.addEventListener("click", (evt) => {
+    if (evt.target === modal) {
+      closeModal(modal);
+    }
+  });
 });
-
-
