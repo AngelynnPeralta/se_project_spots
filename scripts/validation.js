@@ -33,6 +33,12 @@ const disableButton = (buttonElement, config) => {
   buttonElement.classList.add(config.inactiveButtonClass);
 };
 
+const resetValidation = (formElement, inputList, config) => {
+  inputList.forEach((input) => {
+    hideInputError(formElement, input, config);
+  });
+};
+
 const hasInvalidInput = (inputList) => {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid;
